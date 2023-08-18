@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COLOR FLIPPER</title>
+        <style>
+            .container{
+                margin-top: 100px;
+                margin-left: 350px;
+                margin-bottom: 10px;
+                width: 500px;
+                height: 70px;
+                text-align: center;
+                border-radius: 10px;
+                background-color: black;
+                color: white;
+                padding: 5px;  
+            }
+            .diff_color{
+                color: aqua;
+            }
+            .hero_btn{
+                margin-left: 520px;
+                background: transparent;
+                color: black;
+                border: 2px solid gray;
+                box-shadow:  0 1px 3px rgb(226, 79, 79);
+                width: 70px;
+                height: 50px;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <h2> Background Colour : <span class="diff_color"> red </span></h2>
+
+        </div>
+
+        <button class="hero_btn" id="btn" onclick="changecolor()"> click me</button>
+        <script>
+            const colors=["green" , "red" ,"black","white"];
+            const myBtn=document.getElementById("btn");
+            const colorText=document.querySelector(".diff_color");
+
+            function changecolor(){
+                const randomIndex=RandomNumber();
+                document.body.style.backgroundColor=colors[randomIndex];
+                colorText.textContent=colors[randomIndex];
+            }
+            function RandomNumber()
+            {
+                return Math.floor(Math.random() *colors.length)
+            }
+
+        </script>
+        
+    </body>
+</html>
